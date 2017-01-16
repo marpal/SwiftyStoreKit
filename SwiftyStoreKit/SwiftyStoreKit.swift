@@ -182,6 +182,10 @@ public class SwiftyStoreKit {
     ) -> VerifyPurchaseResult {
         return InAppReceipt.verifyPurchase(productId: productId, inReceipt: receipt)
     }
+    
+    public class func base64String() -> String? {
+        return InAppReceipt.base64EncodedString
+    }
   
     /**
      *  Verify the purchase of a subscription (auto-renewable, free or non-renewing) in a receipt. This method extracts all transactions mathing the given productId and sorts them by date in descending order, then compares the first transaction expiry date against the validUntil value.
